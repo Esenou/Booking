@@ -1,0 +1,233 @@
+/*banner*/
+
+.bacancy-page-banner{
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 80px 0px;
+}
+.banner-title{
+	margin-bottom: 75px;
+}
+.banner-title h2{
+	color: #ffffff;
+	margin: 0;
+	text-align: center;
+}
+
+.banner-contact-info{
+	text-align: center;
+	font-family: 'HelveticaNeueCyr-Medium';
+	font-size: 11px;
+	line-height: 12px;
+}
+.banner-contact-info span{
+	display: block;
+	color: #ffffff;
+	margin: 17px 0px;
+}
+
+.banner-item a{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: top;
+	width: 128px;
+	background: #3a7976;
+	padding: 13px;
+	text-transform: uppercase;
+	text-decoration: none;
+	height: 36px;
+}
+
+.mail-contact ul{
+	margin: 0px;
+	padding: 0px;
+}
+.mail-contact ul li{
+	display: block;
+	vertical-align: top;
+}
+.mail-contact ul li a{
+	display: inline-block;
+	color: #fcfcfc;
+	font-size: 16px;
+	font-family: 'HelveticaNeueCyr-Roman';
+	line-height: 20px;
+	text-decoration: none;
+}
+
+
+/*job vacancy section*/
+.job-vacancies .jobs-item{
+	padding-left: 25px;
+	padding-right: 25px;
+	position: relative;
+}
+.job-vacancies{
+	margin: 45px 0px 15px;
+}
+.section-title{
+	text-align: center;
+	margin-bottom: 50px;
+	margin-bottom: 45px;
+}
+.section-title h2{
+	line-height: 50px;
+	margin: 0px;
+}
+
+.jobs-item{
+	margin-bottom: 40px;
+	position: relative;
+	min-height: 345px;
+}
+.jobs-item .scle-zoom{
+	margin-bottom: 10px;
+}
+
+.jobs-item h4{
+	margin-bottom: 15px;
+	line-height: 30px;
+}
+.jobs-item p{
+	font-size: 18px;
+	color: #666666;
+	margin-bottom: 0px;
+	line-height: 23px;
+}
+
+.scle-zoom{
+	overflow: hidden;
+}
+.jobs-item:hover .scle-zoom img{
+	transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-o-transform: scale(1.1);
+}
+.all-jobs-vac{
+	margin-left: -25px;
+	margin-right: -25px;
+}
+
+
+.modal.job-vacancies-modal-bx .modal-body{
+	width: 100%;
+}
+.modal.job-vacancies-modal-bx .modal-dialog{
+	width: initial;
+}
+#vacancies_modal h4.modal-bx-title{
+	font-size: 26px;
+	line-height: 28px;
+}
+
+#vacancies_modal p{
+	font-size: 18px;
+	color: #666666;
+	line-height: 23px;
+}
+
+#vacancies_modal  .modal-dialog{
+	max-width: 700px;
+	width: 100%;
+	padding: 0 20px;
+}
+
+/*----- max-width 1199px -----*/
+
+@media(max-width: 1199px){
+	.bacancy-page-banner {
+		background-size: cover;
+		background-position: center center;
+	}
+	.job-vacancies .jobs-item {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.all-jobs-vac {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	
+
+}
+
+/*----- max-width 991px -----*/
+@media(max-width: 991px){
+	.banner-title h2 {
+		color: #ffffff;
+		line-height: 40px;
+		margin: 0;
+		text-align: center;
+		font-size: 35px;
+	}
+}
+
+/*----- max-width 767px -----*/
+@media(max-width: 767px){
+	.banner-title {
+		margin-bottom: 45px;
+	}
+
+	.job-vacancies .jobs-item {
+		display: table;
+		margin: 0 auto;
+	}
+	.job-vacancies .jobs-item{
+		margin-bottom: 40px;
+	}
+	.jobs-item h4 {
+		margin-bottom: 13px;
+		line-height: 29px;
+		font-size: 22px;
+	}
+	.jobs-item p {
+		font-size: 15px;
+		line-height: 20px;
+	}
+	.section-title h2 {
+		font-size: 35px;
+	}
+	.section-title {
+		margin-bottom: 40px;
+	}
+}
+
+
+
+
+/*----- max-width 479 -----*/
+@media(max-width: 479px){
+	.bacancy-page-banner {
+		padding: 55px 0px;
+	}
+	.banner-item a {
+		width: 90px;
+		padding: 8px;
+		height: 28px;
+	}
+	.mail-contact ul li a {
+		font-size: 13px;
+		line-height: 17px;
+	}
+	.banner-contact-info span {
+		margin: 13px 0px;
+	}
+	.banner-contact-info {
+		font-size: 10px;
+	}
+	.mail-contact ul li a {
+		font-size: 11px;
+	}
+	.banner-title h2 {
+		line-height: 31px;
+		font-size: 24px;
+	}
+	.section-title h2 {
+		font-size: 30px;
+	}
+	.job-vacancies {
+		margin: 35px 0px 15px;
+	}
+
+}

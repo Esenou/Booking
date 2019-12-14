@@ -1,0 +1,342 @@
+.meeting-events-room{
+	position: relative;
+	margin-top: 35px;
+}
+.room-size-title{
+	margin-bottom: 34px;
+}
+.room-size-title h2{
+	text-align: center;
+	position: relative;
+}
+.room-size-title h2:after{
+	content: '';
+	height: 3px;
+	width: 50px;
+	background: #3a7976;
+	display: block;
+	top: 20px;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+.snap-room-wrap{
+	border: 2px solid #d8d8d8;
+	border-bottom: 0;
+}
+.snap-room{
+	padding: 60px 122px 60px 110px;
+}
+/*.room-meet-tab-nav {
+	border-right: 1px solid #d5d5d5;
+	border-left: 1px solid #d5d5d5;
+}*/
+.room-meet-tab-nav ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.room-meet-tab-nav ul li{
+	list-style: none;
+	display: block;
+	width: 33.33%;
+	float: left;
+	text-align: center;
+	background: #f2f2f2;
+}
+.room-meet-tab-nav ul li.active{
+	background: #e6e6e6;
+}
+.room-meet-tab-nav ul li a p{
+	font-size: 17px;
+	color: #666666;
+	line-height: 18px;
+}
+.room-meet-tab-nav ul li a span{
+	font-size: 14px;
+	color: #333333;
+	line-height: 16px;
+	font-family: 'HelveticaNeueCyr-Roman';
+	display: block;
+}
+.room-meet-tab-nav ul li a{
+	padding: 15px;
+	display: block;
+	width: 100%;
+}
+
+.meet-room-details{
+	padding-left: 25px;
+	width: 100%;
+	font-size: 16px;
+	color: #666666;
+}
+.room-dimention{
+	margin-top: 110px;
+}
+.room-dimention h4{
+	color: #4c4c4c;
+	margin: 0px;
+}
+.room-dimention ul{
+	margin: 0px;
+	padding: 0px;
+	color: #4e4e4e;
+	list-style: none;
+	font-size: 15px;
+	margin-top: 25px;
+}
+.room-dimention ul li {
+	max-width: 132px;
+	width: 100%;
+	float: left;
+	margin-right: 30px;
+}
+.room-dimention ul li span{
+	display: inline-block;
+}
+.room-dimention ul li strong{
+	color: #4c4c4c;
+	display: inline-block;
+	margin-left: 15px;
+
+}
+.room-dimention ul li:nth-child(3) strong{
+	margin-left: 22px;
+}
+
+.meetev-slider, .meetev-slider-padding{
+	list-style: none;
+	margin: 0;
+	padding: 0;	
+}
+.meetev-slider li{
+	min-height: 356px;
+	background-repeat: no-repeat!important;
+	background-size: cover!important;
+}
+.meetev-slider-padding li .mesiimg{
+	min-height: 150px;
+	background-repeat: no-repeat!important;
+	background-size: cover!important;
+	position: relative;
+	cursor: pointer;
+}
+.meetev-slider-padding li .mesiimg h6{
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: 0 15px;
+	font-family: 'HelveticaNeueCyr-Medium';
+	font-weight: normal;
+	margin: 0;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 17px;
+	color: #fff;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 2;
+	-ms-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.meetev-slider-padding li .mesiimg span{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1;	
+	opacity: 1;
+	-ms-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.meetev-slider-padding li .mesiimg:hover > span, .meetev-slider-padding li.slick-current .mesiimg span{
+	opacity: 0;
+}
+.meetev-slider-padding li .mesiimg:hover > h6, .meetev-slider-padding li.slick-current .mesiimg h6{
+	opacity: 0;
+}
+.meet-room-eqp{
+	padding-top: 45px;
+	padding-bottom: 30px;
+}
+.meet-room-eqp h4{
+	color: #4c4c4c;
+	margin-bottom: 30px;
+}
+
+.eqp-holder{
+	list-style: none;
+	margin: 30px 0 0;
+	padding: 0;
+}
+.eqp-holder li{
+	width: 33.33%;
+	float: left;
+	padding: 22px 10px 22px 85px;
+	margin-bottom: 30px;
+	background-repeat: no-repeat!important;
+}
+.eqp-holder li:nth-child(3n+4), .feature-items .col-xs-6:nth-child(3n+4){
+	clear: left;
+}
+
+.cateright-promo{
+	padding: 55px 0;
+	color: #fff;
+	background: #3a7976 url(../images/cbgp.jpg) no-repeat;
+	background-position: center;
+	text-align: center;
+}
+.cateright-promo p{
+	margin-bottom: 30px;
+}
+.cateright-promo a{
+	color: #fff;
+	text-align: left;
+	text-transform: uppercase;
+	font-size: 14px;
+	padding: 10px 25px 10px 25px;
+	border: 2px solid #fff;
+	display: inline-block;
+}
+.cateright-promo a:hover{
+	background: #fff;
+	color: #070d0d;
+}
+
+.cateright{
+	position: relative;
+}
+.caterightcn {
+    background: #fff;
+    max-width: 515px;
+    width: 100%;
+    margin-top: -10px;
+    margin-bottom: -15px;
+    z-index: 99;
+    position: relative;
+}
+.caterightcn-in {
+    padding: 65px 80px;
+    text-align: center;
+    box-shadow: 0 0 10px #cbcbcb;
+}
+.caterightcn h3{
+	font-family: 'HelveticaNeueCyr-Medium';
+	text-transform: uppercase;
+	color: #397976;
+	margin-bottom: 35px;
+	margin-top: 0;
+}
+.caterightcn p{
+	margin-bottom: 35px;
+}
+.caterightcn a{
+	font-family: 'HelveticaNeueCyr-Roman';
+	font-size: 12px;
+	color: #fff;
+	background: #3a7976;
+	padding: 11px 85px;
+	text-transform: uppercase;
+	display: inline-block;
+}
+
+.caterightimg{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: url(../images/ctbg.jpg) no-repeat;
+	background-size: cover;
+}
+
+
+@media(max-width: 991px){
+	.meet-room-details {
+		padding-left: 0;
+		max-width: 100%;
+		margin-top: 40px;
+	}
+}
+
+@media(max-width: 767px){
+	.meetev-slider-padding li{
+		width: 50%!important;
+	}
+	.meetev-slider-padding li .mesiimg{
+		min-height: 120px;
+	}
+	.meetev-slider-padding li .mesiimg h6{
+		font-size: 14px;
+	}
+	.meet-room-details{
+		max-width: 100%;
+		padding: 0;
+		margin-top: 40px;
+	}
+	.room-dimention{
+		max-width: 330px;
+		margin-left: auto;
+		margin-right: auto;
+		display: table;
+		margin-top: 30px;
+	}
+	.room-dimention h4{
+		text-align: center;
+	}
+	.eqp-holder li {
+	    width: 50%;
+	    padding-right: 15px;
+	    margin-bottom: 15px;
+	}
+	.eqp-holder li:nth-child(3n+4) {
+	    clear: initial;
+	}
+	.eqp-holder li:nth-child(2n+3) {
+	    clear: left;
+	}
+	.snap-room {
+		padding: 50px 40px;
+	}
+	.meet-room-details {
+		font-size: 16px;
+		line-height: 27px;
+	}
+}
+
+@media(max-width: 479px){
+	.room-meet-tab-nav ul li a {
+		padding: 10px;
+	}
+	.room-meet-tab-nav ul li a p {
+		font-size: 14px;
+		line-height: 15px;
+		margin-bottom: 2px;
+	}
+	.room-meet-tab-nav ul li a span {
+		font-size: 12px;
+		line-height: 14px;
+	}
+	
+	.eqp-holder li {
+	    width: 100%;
+	    margin-bottom: 15px;
+	}	
+	.caterightcn{
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+	.caterightcn-in{
+		padding: 65px 15px;
+		box-shadow: initial;
+	}
+	.caterightcn-wrap .col-sm-12{
+		padding: 0;
+	}
+}
