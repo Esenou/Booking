@@ -1,0 +1,519 @@
+.dt-room-selection{
+	background-image: url("../images/bg.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 26px 0px 25px;
+}
+.dt-room-inner{
+	padding-left: 75px;
+}
+.dt-room-inner .select-sty-dt,
+.dt-room-inner .select-room-gd{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.dt-room-inner .select-sty-dt p,
+.dt-room-inner .select-room-gd p{
+	color: #3a7976;
+	line-height: 18px;
+	font-family: 'HelveticaNeueCyr-Roman';
+	margin-bottom: 20px;
+}
+
+
+.dt-room-inner .select-room-gd{
+	margin-left: 120px;
+}
+
+.dt-room-inner form .form-group{
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 17px;
+}
+
+.dt-room-inner form .form-group:last-child{
+	margin-right: 0px;
+}
+.dt-room-inner form label{
+	display: block;
+	font-size: 10px;
+	color: #818181;
+	font-family: 'HelveticaNeueCyr-Roman';
+	line-height: 12px;
+	margin-bottom: 10px;
+
+}
+.dt-room-inner form select,
+.dt-room-inner form input{
+	display: block;
+	font-size: 13px;
+	padding: 5px 15px;
+	color: #535353;
+	height: 30px;
+	border: none;
+	border: 1px solid #e7e7e7;
+	-webkit-appearance: none;
+   -moz-appearance:none;
+   appearance:none;
+   line-height: 13px;
+   background-image: url("../images/select-drop.png");
+   background-repeat: no-repeat;
+   background-position: calc(100% - 10px) center;
+   cursor: pointer;
+}
+.dt-room-inner select{
+	width: 68px;
+}
+
+.dt-room-inner .same-width input{
+	width: 158px;
+}
+
+.dt-room-inner .same-wdth2 select{
+	width: 135px;
+}
+
+.book-cals{
+	overflow: hidden;
+	clear: both;
+	max-width: 1250px;
+	width: 100%;
+	margin: 52px auto;
+	padding: 24px 40px 20px;
+	box-shadow: 0px 0px 16px #ebebeb;
+}
+
+.book-cals .ui-datepicker .weekend .ui-state-default {
+  background: #FEA;
+}
+.book-cals .ui-datepicker-calendar td a[data-custom] {
+  position: relative;
+  padding-bottom: 10px;
+}
+.book-cals .ui-datepicker-calendar td a[data-custom]::after {
+  /*STYLE THE CUSTOME DATA HERE*/
+  content: '$' attr(data-custom);
+  display: block;
+  font-size: small;
+}
+#bookCal .ui-datepicker{
+	width: 100% !important;
+	border: none !important;
+}
+
+#bookCal .ui-widget-header{
+	background: transparent !important;
+	border: none !important;
+}
+
+#bookCal .ui-icon-circle-triangle-w{
+	background: url("../images/left.gif") !important;
+	background-repeat: no-repeat;
+	width: 31px;
+	height: 11px;
+	display: block;
+	cursor: pointer;
+
+}
+
+#bookCal .ui-icon-circle-triangle-e{
+	background: url("../images/right.gif") !important;
+	background-repeat: no-repeat;
+	width: 31px;
+	height: 11px;
+	display: block;
+	cursor: pointer;
+}
+#bookCal .ui-corner-all{
+	display: inline-block;
+	border: none;
+}
+
+#bookCal .ui-datepicker-prev-hover,
+#bookCal .ui-datepicker-next-hover{
+	background: transparent !important;
+}
+
+#bookCal .ui-datepicker-title{
+	font-size: 29px;
+	line-height: 35px;
+	color: #333333;
+	font-family: 'PlayfairDisplayBold';
+}
+
+#bookCal .ui-datepicker .ui-datepicker-prev,
+ #bookCal .ui-datepicker .ui-datepicker-next{
+ 	top: 8px;
+ }
+ #bookCal .ui-datepicker .ui-datepicker-prev{
+ 	left: 0px;
+ }
+#bookCal .ui-datepicker .ui-datepicker-next{
+	right: 0px;
+}
+#bookCal .ui-datepicker th{
+	color: #3a7976;
+	font-family: 'HelveticaNeueCyr-Roman';
+	font-size: 11px;
+	line-height: 12px;
+	padding: 0px 0px 20px;
+}
+#bookCal .ui-datepicker-header{
+	margin-bottom: 30px;
+}
+
+#bookCal .ui-widget-content .ui-state-default{
+	border: none !important;
+	height: 50px;
+	width: 73px;
+
+}
+
+#bookCal .ui-datepicker td{
+	width: 73px;
+	height: 50px;
+}
+#bookCal .ui-datepicker td a{
+	color: #868687;
+	font-size: 12px;
+	padding: 6px;
+	margin: 3px;
+}
+
+#bookCal .ui-datepicker .ui-state-active{
+	background: #3a7976;
+	color: #fff;
+}
+
+#bookCal .ui-datepicker-group-last{
+	padding-left: 15px;
+}
+
+#bookCal .ui-datepicker-group-first{
+	padding-right: 15px;
+	position: relative;
+}
+
+#bookCal .ui-datepicker-group-first:after{
+	height: 280px;
+	width: 2px;
+	position: absolute;
+	right: -1px;
+	top: 108px;
+	content: '';
+	background: #e2e2e2
+}
+
+#bookCal .ui-datepicker-calendar td a{
+	position: relative;
+}
+
+#bookCal .ui-datepicker-calendar td a:after{
+	text-align: left !important;
+	display: block !important;
+	padding: 0px !important;
+	font-size: 10px !important;
+	color: #3a7976 !important;
+	bottom: 11px !important;
+	left: 11px !important;
+	position: absolute !important;
+	line-height: 11px;
+}
+
+#bookCal td a.ui-state-active:after {
+	color: #fff !important;
+}
+
+#bookCal  .ui-datepicker-other-month span{
+	background: transparent !important;
+}
+
+
+
+.color-meaning-bookbtn{
+	max-width: 510px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+.color-meaning ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.color-meaning{
+	margin-bottom: 40px;
+}
+
+.color-meaning ul li{
+	display: inline-block;
+	position: relative;
+	padding-left: 45px;
+	padding-top: 7px;
+	vertical-align: top;
+	font-size: 13px;
+	line-height: 14px;
+	color: #575757;
+	margin-right: 38px;
+	height: 28px;
+}
+.color-meaning ul li:last-child{
+	margin-right: 0px;
+}
+
+.color-meaning ul li:before{
+	height: 28px;
+	width: 28px;
+	border-radius: 50%;
+	position: absolute;
+	left: 0;
+	top: 0px;
+	content: '';
+	box-shadow: 0px 0px 10px #898989;
+}
+
+.color-meaning ul li.seleted-color:before{
+	background: #3a7976;
+}
+.color-meaning ul li.available-color:before{
+	background: #f2f2f2;
+}
+.color-meaning ul li.disable-color:before{
+	background: #808080;
+}
+.bookbtn{
+	text-align: center;
+}
+.bookbtn a{
+	display: inline-block;
+	width: 224px;
+	height: 45px;
+	background: #3a7976;
+	padding: 15px;
+	font-family: 'HelveticaNeueCyr-Medium';
+	color: #fff;
+	font-size: 16px;
+	line-height: 17px;
+}
+
+
+.enjoy-offers2{
+	padding-top: 50px;
+	padding-bottom: 25px;
+}
+
+#bookCal  .ui-state-hover{
+	background: #3a7976;
+	color: #fff !important;
+}
+#bookCal  a.ui-state-hover:after{
+	color: #fff;
+}
+
+
+
+#bookCal .ui-datepicker .weekend .ui-state-default {
+  background: #FEA;
+}
+#bookCal .ui-datepicker-calendar td a[data-custom] {
+  position: relative;
+  padding-bottom: 10px;
+}
+#bookCal .ui-datepicker-calendar td a[data-custom]::after {
+  /*STYLE THE CUSTOME DATA HERE*/
+  content: attr(data-custom) '$';
+  display: block;
+  font-size: small;
+}
+
+#bookCal  a.ui-state-hover:after{
+	color: #fff !important;
+}
+
+#bookCal a.ui-selecting,
+#bookCal a.ui-selected {
+	background: #9b2e1b;
+}
+.catrfresh-btn {
+	margin-left: 22px;
+	margin-top: 15px;
+}
+.catrfresh-btn button{
+	border: none;
+	background: transparent;
+	color: #fff;
+	height: 27px;
+	width: 156px;
+	background: #3a7976;
+	font-size: 11px;
+	line-height: 12px;
+	padding: 6px;
+	font-family: 'HelveticaNeueCyr-Medium';
+}
+
+
+
+
+
+
+/*----- max-width 1199px -----*/
+
+@media(max-width: 1300px){
+	#bookCal .ui-widget-content .ui-state-default {
+		height: 50px;
+		width: 69px;
+	}
+}
+
+@media(max-width: 1199px){
+	.dt-room-inner {
+		padding-left: 20px;
+	}
+	.dt-room-inner .select-room-gd {
+		margin-left: 60px;
+	}
+	#bookCal .ui-widget-content .ui-state-default {
+		border: none !important;
+		height: 44px;
+		width: 54px;
+	}
+	#bookCal .ui-datepicker-title {
+		font-size: 23px;
+		line-height: 31px;
+	}
+	#bookCal .ui-datepicker-calendar td a::after {
+		font-size: 8px !important;
+		bottom: 8px !important;
+		left: 8px !important;
+	}
+
+
+
+
+
+}
+
+/*----- max-width 991px -----*/
+@media(max-width: 991px){
+	.dt-room-selection{
+		background-size: cover;
+		background-position: center center; 
+	}
+	.dt-room-inner .select-sty-dt, 
+	.dt-room-inner .select-room-gd {
+		display: block;
+		max-width: 50%;
+		width: 100%;
+		float: left;
+	}
+	.dt-room-inner .select-sty-dt{
+		padding-right: 20px;
+	}
+	.dt-room-inner .select-room-gd{
+		margin-left: 0px;
+		padding-left: 20px;
+	}
+
+	#bookCal .ui-datepicker-group-last,
+	#bookCal .ui-datepicker-group-first {
+		width: 100%;
+		padding: 20px ;
+	}
+	#bookCal .ui-datepicker-group-first::after{
+		opacity: 0;
+	}
+
+	#bookCal .ui-widget-content .ui-state-default {
+		border: none !important;
+		height: 50px;
+		width: 73px;
+		max-width: 100%;
+	}
+	
+
+
+
+}
+
+/*----- max-width 767px -----*/
+@media(max-width: 767px){
+	
+	.same-wdth2,
+	.dt-room-inner .select-sty-dt .form-group{
+		display: block !important;
+	}
+
+	.select-room-gd .form-group:last-child {
+		display: block !important;
+	}
+
+	.book-cals {
+		overflow: hidden;
+		clear: both;
+		max-width: 100%;
+		width: 100%;
+		margin: 40px auto;
+		padding: 0;
+		box-shadow: 0px 0px 0px #ebebeb;
+	}
+	.catrfresh-btn {
+		text-align: center;
+	}
+	.catrfresh-btn button {
+		width: 245px;
+		height: 45px;
+		font-family: 'HelveticaNeueCyr-Medium';
+		color: #fff;
+		font-size: 18px;
+		line-height: 20px;
+	}
+
+
+}
+
+
+/*----- max-width 639 -----*/
+@media(max-width: 639px){
+	
+}
+@media(max-width: 600px){
+	#bookCal .ui-widget-content .ui-state-default{
+		height: auto;
+		width: auto;
+		padding: 8px;
+		font-size: 10px;
+	}
+	.color-meaning ul li {
+		display: block;
+		margin-bottom: 15px;
+		margin-right: 0; 
+	}
+	.color-meaning ul {
+		display: table;
+		margin: 0 auto;
+	}
+	#bookCal .ui-datepicker td a {
+		margin: 1px;
+	}
+	#bookCal .ui-datepicker-group-last, #bookCal .ui-datepicker-group-first {
+		width: 100%;
+		padding: 10px;
+	}
+}
+
+
+/*----- max-width 439 -----*/
+@media(max-width: 479px){
+	
+}
+
+@media(max-width: 424px){
+	
+}
+/*----- max-width 369 -----*/
+@media(max-width: 359px){
+
+}

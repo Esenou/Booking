@@ -1,0 +1,60 @@
+/**
+All Transitions
+*/
+a,input,img,textarea,button,select, 
+.videoplay, .icon-circle, .main-nav, .main-nav > ul > li,
+.ftr-proposal-title{
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
+
+.kitchen-item .ktchn-img img:hover,
+a:after{
+	transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-webkit-transition: all 0.2s;
+}
+.resturent-gallery ul li a img:hover,
+.scale{
+	transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-o-transform: scale(1.1);
+}
+
+/**
+All Hovers
+*/
+a:hover{
+	text-decoration: none;
+}
+nav.main-nav ul li a:hover,
+nav.main-nav ul li.current-menu-item a,
+.ftr-socail .icon-circle:hover{
+	color:#3a7976;
+}
+
+.rel-btn a.more:hover,
+.rel-btn a.book:hover,
+.ftr-proposal-title:hover,
+.ositemright a:hover,
+.caterightcn a:hover,
+.modal-body form input[type="submit"]:hover,
+.modal-tiger-button button:hover,
+.catrfresh-btn button:hover,
+.bookbtn a:hover,
+.reservation-form form input[type="submit"]:hover,
+.restaurant-menu .menu-item a:hover,
+.kitchen-item-details a:hover,
+.banner-item a:hover{
+	background: #235956;
+	color: #fff;
+}
+.crr-cn-c2 a:hover{
+	background: #0c5d59;
+}
+.ofr-sec-title a:hover{
+	color: #0c5d59;
+}
+
