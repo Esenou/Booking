@@ -9,4 +9,4 @@ from hotel.models import Hotel
 
 def hotel_list(request):
     hotels = Hotel.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/hotel_list.html',{'hotels':hotels })
+    return render(request, 'hotel/hotel_list.html', {'hotels':hotels})
