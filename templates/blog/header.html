@@ -1,4 +1,4 @@
-
+{% load static %}
 <header class="hdr-wrap">
   <div class="hdr-top-wrap">
     <div class="container">
@@ -18,7 +18,7 @@
             </div>
 
             <div class="hdr-top-rgt" style="margin-top:0px;">
-    <a href="/ru/rooms/"><button class="btn btn-danger">ЗАБРОНИРОВАТЬ</button></a>
+    <a href="{% url 'hotel_list' %}"><button class="btn btn-danger">ЗАБРОНИРОВАТЬ</button></a>
       </div>
             <div class="hdr-top-rgt">
               <ul id="hdr-language" class="clearfix">
@@ -44,8 +44,8 @@
           <div class="col-sm-12">
             <div class="hdr-btm-inner clearfix">
               <h1 class="logo">
-                <a href="index.html">
-                  <img src="static/css/images/sitelogo.jpg">
+                <a href="{% url 'hotel_list' %}">
+                  <img src="{% static 'images/logo.png' %}" alt="Smart Hotel">
 
                 </a>
               </h1>

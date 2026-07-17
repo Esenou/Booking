@@ -3,7 +3,7 @@ from datetime import date, timedelta
 from django.contrib.auth.models import User
 from django.test import TestCase
 
-from .models import Booking, Hotel
+from .models import Booking, Hotel, Review
 
 
 class HotelModelTests(TestCase):
@@ -108,3 +108,20 @@ class HotelModelTests(TestCase):
         )
         self.assertIn('Guest', str(booking))
         self.assertIn('Smart Hotel', str(booking))
+
+    def test_hotel_capacity_and_rating(self):
+        user = User.objects.create_user('tester')
+        hotel = Hotel.objects.create(
+            author=user,
+            title='Smart Hotel',
+            text='A nice place in Bishkek.',
+            price=100,
+            amount=2,
+            capacity=4,
+        )
+        self.assertEqual(hotel.capacity, 4)
+
+        Review.objects.create(hotel=hotel, user=user, rating=4, text='Great!')
+        Review.objects.create(hotel=hotel, user=User.objects.create_user('other'), rating=2, text='Okay')
+        self.assertEqual(hotel.review_count, 2)
+        self.assertEqual(hotel.average_rating, 3)

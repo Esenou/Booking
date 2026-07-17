@@ -5,6 +5,13 @@
         <a href="{% url 'hotel_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> Add hotel</a>
     {% endif %}
 
+    <h1>Find a hotel</h1>
+    <form method="GET" class="hotel-search-form">
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Search</button>
+        <a href="{% url 'hotel_list' %}" class="btn btn-default">Clear</a>
+    </form>
+
     {% for hotel in hotels %}
         <div class="hotel">
             <div class="date">
@@ -13,10 +20,13 @@
             <h1><a href="{% url 'hotel_detail' pk=hotel.pk %}">{{ hotel.title }}</a></h1>
             <p>{{ hotel.text|linebreaksbr }}</p>
             <p>Price: {{ hotel.price }}</p>
-            <p>Available: {{ hotel.amount }}</p>
+            <p>Rooms: {{ hotel.amount }}</p>
+            <p>Capacity per room: {{ hotel.capacity }}</p>
             {% if hotel.image %}
                 <img src="{{ hotel.image.url }}" alt="{{ hotel.title }}" style="max-width: 300px;">
             {% endif %}
         </div>
+    {% empty %}
+        <p>No hotels match your search.</p>
     {% endfor %}
 {% endblock %}

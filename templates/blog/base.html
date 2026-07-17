@@ -10,6 +10,12 @@
 
      {% if user.is_authenticated %}
          <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+         <a href="{% url 'profile' %}" class="top-menu">{{ user.username }}</a>
+         <a href="{% url 'booking_list' %}" class="top-menu">My bookings</a>
+         <a href="{% url 'logout' %}?next={{ request.path }}" class="top-menu">Log out</a>
+     {% else %}
+         <a href="{% url 'login' %}" class="top-menu">Log in</a>
+         <a href="{% url 'signup' %}" class="top-menu">Sign up</a>
      {% endif %}
 
 
