@@ -1,4 +1,5 @@
-from django.urls import path
+from django.urls import path, re_path
+from django.views.generic.base import RedirectView
 
 from . import views
 
@@ -13,4 +14,5 @@ urlpatterns = [
     path('<int:pk>/edit/', views.hotel_edit, name='hotel_edit'),
     path('<int:pk>/delete/', views.hotel_delete, name='hotel_delete'),
     path('<int:pk>/', views.hotel_detail, name='hotel_detail'),
+    re_path(r'^(?P<path>[\w-]+\.html)$', RedirectView.as_view(url='/%(path)s', permanent=False)),
 ]
