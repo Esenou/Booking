@@ -1,10 +1,14 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <h1>Book {{ hotel.title }}</h1>
-    <p>Price per night: {{ hotel.price }}</p>
-    <form method="POST">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Request booking</button>
-    </form>
+    <div class="container-narrow">
+        <h1>Book {{ hotel.title }}</h1>
+        <p class="lead">{{ hotel.price }} per night &bull; up to {{ hotel.capacity }} guests per room</p>
+
+        <form method="POST">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Request booking</button>
+            <a href="{% url 'hotel_detail' pk=hotel.pk %}" class="btn btn-default">Cancel</a>
+        </form>
+    </div>
 {% endblock %}

@@ -1,8 +1,12 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <h1>Profile</h1>
-    <p><strong>Username:</strong> {{ user.username }}</p>
-    <p><strong>Email:</strong> {{ user.email }}</p>
-    <p><a href="{% url 'booking_list' %}">My bookings</a></p>
+    <div class="container-narrow">
+        <h1>Profile</h1>
+        <div class="card">
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><a href="{% url 'booking_list' %}" class="btn btn-primary">My bookings</a></p>
+        </div>
+    </div>
 {% endblock %}

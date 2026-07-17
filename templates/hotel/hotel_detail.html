@@ -1,44 +1,57 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
 {% block content %}
-    <div class="hotel">
-        {% if hotel.published_date %}
-            <div class="date">
-                {{ hotel.published_date }}
-            </div>
-        {% endif %}
-        {% if user == hotel.author %}
-            <a class="btn btn-default" href="{% url 'hotel_edit' pk=hotel.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-            <a class="btn btn-default" href="{% url 'hotel_delete' pk=hotel.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-        {% endif %}
-        <h1>{{ hotel.title }}</h1>
-        <p>{{ hotel.text|linebreaksbr }}</p>
-        <p>Price: {{ hotel.price }}</p>
-        <p>Available rooms: {{ hotel.amount }}</p>
-        <p>Capacity per room: {{ hotel.capacity }}</p>
-        {% if hotel.average_rating is not None %}
-            <p>Rating: {{ hotel.average_rating|floatformat:1 }} / 5 ({{ hotel.review_count }} reviews)</p>
-        {% endif %}
+    <div class="hotel-hero">
         {% if hotel.image %}
             <img src="{{ hotel.image.url }}" alt="{{ hotel.title }}">
+        {% else %}
+            <img src="{% static 'images/hotel-placeholder.png' %}" alt="{{ hotel.title }}">
         {% endif %}
-        <p>
-            <a class="btn btn-primary" href="{% url 'booking_create' hotel_pk=hotel.pk %}">Book now</a>
-        </p>
     </div>
 
-    <h2>Reviews</h2>
-    {% if user.is_authenticated %}
-        <p><a href="{% url 'add_review' hotel_pk=hotel.pk %}">
-            {% if user_review %}Edit your review{% else %}Leave a review{% endif %}
-        </a></p>
-    {% endif %}
-    {% for review in reviews %}
-        <div class="review">
-            <p><strong>{{ review.user.username }}</strong> — {{ review.rating }}/5</p>
-            <p>{{ review.text|linebreaksbr }}</p>
+    <div class="hotel-info-grid">
+        <div class="hotel-main">
+            <div class="card">
+                <h1>{{ hotel.title }}</h1>
+                <p class="text-muted">Published {{ hotel.published_date }}</p>
+                <p>{{ hotel.text|linebreaksbr }}</p>
+
+                {% if user == hotel.author %}
+                    <div style="margin-top: 1.5rem;">
+                        <a class="btn btn-default" href="{% url 'hotel_edit' pk=hotel.pk %}"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+                        <a class="btn btn-default" href="{% url 'hotel_delete' pk=hotel.pk %}"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="card">
+                <h2>Reviews</h2>
+                {% if user.is_authenticated %}
+                    <p><a href="{% url 'add_review' hotel_pk=hotel.pk %}">
+                        {% if user_review %}Edit your review{% else %}Leave a review{% endif %}
+                    </a></p>
+                {% endif %}
+                {% for review in reviews %}
+                    <div class="review">
+                        <p><strong>{{ review.user.username }}</strong> <span class="rating">{{ review.rating }}/5</span></p>
+                        <p>{{ review.text|linebreaksbr }}</p>
+                    </div>
+                {% empty %}
+                    <p class="empty-state">No reviews yet.</p>
+                {% endfor %}
+            </div>
         </div>
-    {% empty %}
-        <p>No reviews yet.</p>
-    {% endfor %}
+
+        <div class="hotel-sidebar">
+            <div class="price">{{ hotel.price }}</div>
+            <p class="text-muted">per night</p>
+            <p><strong>{{ hotel.amount }}</strong> rooms available</p>
+            <p><strong>{{ hotel.capacity }}</strong> guests per room</p>
+            {% if hotel.average_rating is not None %}
+                <p>Rating: <span class="rating">{{ hotel.average_rating|floatformat:1 }} / 5</span></p>
+            {% endif %}
+            <a class="btn btn-primary btn-lg" href="{% url 'booking_create' hotel_pk=hotel.pk %}">Book now</a>
+        </div>
+    </div>
 {% endblock %}
