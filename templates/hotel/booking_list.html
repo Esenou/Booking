@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>My bookings</h1>
+    {% for booking in bookings %}
+        <div class="booking">
+            <h2><a href="{% url 'booking_detail' pk=booking.pk %}">{{ booking.hotel.title }}</a></h2>
+            <p>{{ booking.check_in }} - {{ booking.check_out }} ({{ booking.get_status_display }})</p>
+            {% if booking.status == 'pending' or booking.status == 'confirmed' %}
+                <a class="btn btn-danger" href="{% url 'booking_cancel' pk=booking.pk %}">Cancel</a>
+            {% endif %}
+        </div>
+    {% empty %}
+        <p>You have no bookings yet.</p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>Cancel booking</h1>
+    <p>Are you sure you want to cancel your booking at <strong>{{ booking.hotel.title }}</strong> from {{ booking.check_in }} to {{ booking.check_out }}?</p>
+    <form method="POST">{% csrf_token %}
+        <button type="submit" class="btn btn-danger">Cancel booking</button>
+        <a href="{% url 'booking_detail' pk=booking.pk %}" class="btn btn-default">Back</a>
+    </form>
+{% endblock %}
