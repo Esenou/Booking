@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>Booking confirmation</h1>
+    <p><strong>Hotel:</strong> {{ booking.hotel.title }}</p>
+    <p><strong>Guest:</strong> {{ booking.guest_name }}</p>
+    <p><strong>Email:</strong> {{ booking.email }}</p>
+    <p><strong>Phone:</strong> {{ booking.phone }}</p>
+    <p><strong>Check-in:</strong> {{ booking.check_in }}</p>
+    <p><strong>Check-out:</strong> {{ booking.check_out }}</p>
+    <p><strong>Guests:</strong> {{ booking.guests }}</p>
+    <p><strong>Status:</strong> {{ booking.get_status_display }}</p>
+    {% if booking.comment %}
+        <p><strong>Comment:</strong> {{ booking.comment }}</p>
+    {% endif %}
+    {% if user.is_authenticated %}
+        <p><a href="{% url 'booking_list' %}">My bookings</a></p>
+    {% endif %}
+{% endblock %}

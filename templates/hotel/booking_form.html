@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>Book {{ hotel.title }}</h1>
+    <p>Price per night: {{ hotel.price }}</p>
+    <form method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Request booking</button>
+    </form>
+{% endblock %}

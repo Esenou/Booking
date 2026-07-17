@@ -18,5 +18,8 @@
         {% if hotel.image %}
             <img src="{{ hotel.image.url }}" alt="{{ hotel.title }}">
         {% endif %}
+        <p>
+            <a class="btn btn-primary" href="{% url 'booking_create' hotel_pk=hotel.pk %}">Book now</a>
+        </p>
     </div>
 {% endblock %}
