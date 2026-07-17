@@ -11,6 +11,7 @@ class Hotel(models.Model):
     text = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     amount = models.PositiveIntegerField(default=0)
+    capacity = models.PositiveIntegerField(default=2)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
@@ -50,6 +51,17 @@ class Hotel(models.Model):
 
     def is_available(self, check_in, check_out, exclude_booking=None):
         return self.occupied_rooms(check_in, check_out, exclude_booking) < self.amount
+
+    @property
+    def average_rating(self):
+        reviews = self.reviews.all()
+        if not reviews.exists():
+            return None
+        return reviews.aggregate(avg=models.Avg('rating'))['avg']
+
+    @property
+    def review_count(self):
+        return self.reviews.count()
 
 
 class Booking(models.Model):
@@ -93,3 +105,18 @@ class Booking(models.Model):
         elif self.hotel and self.pk:
             if not self.hotel.is_available(self.check_in, self.check_out, exclude_booking=self):
                 raise ValidationError("This hotel is not available for the selected dates.")
+
+
+class Review(models.Model):
+    hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE, related_name='reviews')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    rating = models.PositiveSmallIntegerField(default=5)
+    text = models.TextField(blank=True)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        ordering = ['-created_at']
+        unique_together = ('hotel', 'user')
+
+    def __str__(self):
+        return f"{self.user.username} — {self.hotel.title}: {self.rating}"

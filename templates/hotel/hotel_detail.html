@@ -15,6 +15,10 @@
         <p>{{ hotel.text|linebreaksbr }}</p>
         <p>Price: {{ hotel.price }}</p>
         <p>Available rooms: {{ hotel.amount }}</p>
+        <p>Capacity per room: {{ hotel.capacity }}</p>
+        {% if hotel.average_rating is not None %}
+            <p>Rating: {{ hotel.average_rating|floatformat:1 }} / 5 ({{ hotel.review_count }} reviews)</p>
+        {% endif %}
         {% if hotel.image %}
             <img src="{{ hotel.image.url }}" alt="{{ hotel.title }}">
         {% endif %}
@@ -22,4 +26,19 @@
             <a class="btn btn-primary" href="{% url 'booking_create' hotel_pk=hotel.pk %}">Book now</a>
         </p>
     </div>
+
+    <h2>Reviews</h2>
+    {% if user.is_authenticated %}
+        <p><a href="{% url 'add_review' hotel_pk=hotel.pk %}">
+            {% if user_review %}Edit your review{% else %}Leave a review{% endif %}
+        </a></p>
+    {% endif %}
+    {% for review in reviews %}
+        <div class="review">
+            <p><strong>{{ review.user.username }}</strong> — {{ review.rating }}/5</p>
+            <p>{{ review.text|linebreaksbr }}</p>
+        </div>
+    {% empty %}
+        <p>No reviews yet.</p>
+    {% endfor %}
 {% endblock %}
