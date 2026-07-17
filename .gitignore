@@ -1,8 +1,13 @@
-*.idea/
+.idea/
 *.pyc
 *~
-__pycache__
-myvenv
+__pycache__/
+venv/
+myvenv/
+env/
+*.env
+!*.env.example
 db.sqlite3
 /static
 .DS_Store
+Thumbs.db
