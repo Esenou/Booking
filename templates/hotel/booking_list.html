@@ -2,15 +2,24 @@
 
 {% block content %}
     <h1>My bookings</h1>
+
     {% for booking in bookings %}
-        <div class="booking">
-            <h2><a href="{% url 'booking_detail' pk=booking.pk %}">{{ booking.hotel.title }}</a></h2>
-            <p>{{ booking.check_in }} - {{ booking.check_out }} ({{ booking.get_status_display }})</p>
-            {% if booking.status == 'pending' or booking.status == 'confirmed' %}
-                <a class="btn btn-danger" href="{% url 'booking_cancel' pk=booking.pk %}">Cancel</a>
-            {% endif %}
+        <div class="booking-item">
+            <div>
+                <h3><a href="{% url 'booking_detail' pk=booking.pk %}">{{ booking.hotel.title }}</a></h3>
+                <p class="dates">{{ booking.check_in }} &rarr; {{ booking.check_out }}</p>
+            </div>
+            <div>
+                <span class="badge badge-{{ booking.status }}">{{ booking.get_status_display }}</span>
+                {% if booking.status == 'pending' or booking.status == 'confirmed' %}
+                    <a class="btn btn-default" href="{% url 'booking_cancel' pk=booking.pk %}">Cancel</a>
+                {% endif %}
+            </div>
         </div>
     {% empty %}
-        <p>You have no bookings yet.</p>
+        <div class="empty-state">
+            <h3>You have no bookings yet.</h3>
+            <p><a href="{% url 'hotel_list' %}" class="btn btn-primary">Browse hotels</a></p>
+        </div>
     {% endfor %}
 {% endblock %}

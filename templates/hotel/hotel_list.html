@@ -1,32 +1,51 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
 {% block content %}
-    {% if user.is_authenticated %}
-        <a href="{% url 'hotel_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> Add hotel</a>
-    {% endif %}
+    <div class="page-title">
+        <h1>Find your perfect stay</h1>
+        <p class="lead">Search by dates, price and number of guests.</p>
+    </div>
 
-    <h1>Find a hotel</h1>
     <form method="GET" class="hotel-search-form">
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Search</button>
         <a href="{% url 'hotel_list' %}" class="btn btn-default">Clear</a>
     </form>
 
-    {% for hotel in hotels %}
-        <div class="hotel">
-            <div class="date">
-                {{ hotel.published_date }}
-            </div>
-            <h1><a href="{% url 'hotel_detail' pk=hotel.pk %}">{{ hotel.title }}</a></h1>
-            <p>{{ hotel.text|linebreaksbr }}</p>
-            <p>Price: {{ hotel.price }}</p>
-            <p>Rooms: {{ hotel.amount }}</p>
-            <p>Capacity per room: {{ hotel.capacity }}</p>
-            {% if hotel.image %}
-                <img src="{{ hotel.image.url }}" alt="{{ hotel.title }}" style="max-width: 300px;">
-            {% endif %}
+    {% if user.is_authenticated %}
+        <div class="text-right" style="margin-bottom: 1.5rem;">
+            <a href="{% url 'hotel_new' %}" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Add hotel</a>
         </div>
-    {% empty %}
-        <p>No hotels match your search.</p>
-    {% endfor %}
+    {% endif %}
+
+    <div class="hotel-grid">
+        {% for hotel in hotels %}
+            <article class="hotel-card">
+                <div class="hotel-image">
+                    {% if hotel.image %}
+                        <img src="{{ hotel.image.url }}" alt="{{ hotel.title }}">
+                    {% else %}
+                        <img src="{% static 'images/hotel-placeholder.png' %}" alt="{{ hotel.title }}">
+                    {% endif %}
+                </div>
+                <div class="hotel-body">
+                    <h2><a href="{% url 'hotel_detail' pk=hotel.pk %}">{{ hotel.title }}</a></h2>
+                    <p class="hotel-meta">
+                        {{ hotel.amount }} rooms &bull; up to {{ hotel.capacity }} guests per room
+                    </p>
+                    {% if hotel.average_rating is not None %}
+                        <p class="hotel-meta">Rating: {{ hotel.average_rating|floatformat:1 }} / 5</p>
+                    {% endif %}
+                    <p class="hotel-price">{{ hotel.price }} per night</p>
+                    <a href="{% url 'hotel_detail' pk=hotel.pk %}" class="btn btn-primary">View details</a>
+                </div>
+            </article>
+        {% empty %}
+            <div class="empty-state">
+                <h3>No hotels match your search.</h3>
+                <p>Try different dates or fewer filters.</p>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
