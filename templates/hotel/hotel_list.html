@@ -1,18 +1,22 @@
-
 {% extends 'blog/base.html' %}
 
-
-
 {% block content %}
+    {% if user.is_authenticated %}
+        <a href="{% url 'hotel_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> Add hotel</a>
+    {% endif %}
 
-    <div>
-    <h1>asdjfklsdajfklasdjf
-    fasdkfjklasdjfklasdjf
-    djkfjasdklfjak</h1>
-    {% for post in hotels %}
-        {{ post.title }}
+    {% for hotel in hotels %}
+        <div class="hotel">
+            <div class="date">
+                {{ hotel.published_date }}
+            </div>
+            <h1><a href="{% url 'hotel_detail' pk=hotel.pk %}">{{ hotel.title }}</a></h1>
+            <p>{{ hotel.text|linebreaksbr }}</p>
+            <p>Price: {{ hotel.price }}</p>
+            <p>Available: {{ hotel.amount }}</p>
+            {% if hotel.image %}
+                <img src="{{ hotel.image.url }}" alt="{{ hotel.title }}" style="max-width: 300px;">
+            {% endif %}
+        </div>
     {% endfor %}
-
-    </div>
 {% endblock %}
-
